@@ -15,6 +15,7 @@ export const NavSections = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 17rem;
   gap: 1.8rem;
 `
 
