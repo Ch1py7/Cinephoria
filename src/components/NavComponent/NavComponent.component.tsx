@@ -3,7 +3,6 @@ import * as S from './NavComponent.styles'
 import { Icon } from '@iconify/react'
 
 export const NavComponent: FC = (): ReactElement => {
-
   const IconStyles = {
     fontSize: '2.4rem',
     color: '#e4e0e6'

@@ -2,12 +2,16 @@ import styled from 'styled-components'
 
 export const NavComponent = styled.nav`
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 8rem;
   padding: 2rem 4rem;
+  background-color: #101010dd;
   font-family: 'Satoshi', sans-serif;
 `
 

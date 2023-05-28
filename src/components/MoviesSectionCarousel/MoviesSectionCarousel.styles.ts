@@ -20,14 +20,17 @@ export const CarouselItem = styled.li`
   transition: margin 0.5s ease-in-out, opacity 0.5s ease-in-out;
   & > * {
     border-radius: 10px;
+    height: 22.5;
+    width: 40rem;
   }
 `
 
 export const CarouselList = styled.ul<CarouselListProps>`
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  padding-top: 1rem;
   gap: 4rem;
   list-style: none;
   overflow: hidden;
@@ -50,6 +53,7 @@ export const CarouselButton = styled.button`
   justify-content: center;
   width: 6rem;
   height: 6rem;
+  margin-bottom: 6rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
