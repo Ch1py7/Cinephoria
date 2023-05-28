@@ -1,6 +1,7 @@
 import { FC, ReactElement, useEffect, useState } from 'react'
 import * as S from './SectionMovies.styles'
 import { MovieTypes } from 'types/movie.types'
+import { MoviesSectionCarousel as Carousel } from '../MoviesSectionCarousel'
 
 
 export const SectionMovies: FC = (): ReactElement => {
@@ -179,20 +180,22 @@ export const SectionMovies: FC = (): ReactElement => {
   return (
     <>
       {category.map((genre) => (
-        <section key={genre.id}>
+        <section key={genre.id} style={{padding: '0 4rem', height: '35rem'}}>
           <S.SectionName>{genre.name}</S.SectionName>
           <S.MovieContainer>
-            {(genre.name === 'Action' ? actionMovies : genre.name === 'Adventure' ? adventureMovies : genre.name === 'Animation' ? animationMovies : genre.name === 'Comedy' ? comedyMovies : genre.name === 'Crime' ? crimeMovies : genre.name === 'Documentary' ? documentaryMovies : genre.name === 'Drama' ? dramaMovies : genre.name === 'Family' ? familyMovies : genre.name === 'Fantasy' ? fantasyMovies : genre.name === 'History' ? historyMovies : genre.name === 'Horror' ? horrorMovies : genre.name === 'Music' ? musicMovies : genre.name === 'Mystery' ? mysteryMovies : genre.name === 'Romance' ? romanceMovies : genre.name === 'Science Fiction' ? scienceFictionMovies : genre.name === 'TV Movie' ? tvMovies : genre.name === 'Thriller' ? thrillerMovies : genre.name === 'War' ? warMovies : genre.name === 'Western' ? westernMovies : [])?.map((movie) => (
-              <S.Movie key={movie.id}>
-                <img 
-                  key={movie.id}
-                  src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                  alt={movie.title}
-                  style={{height: '20rem'}}
-                />
-                <S.MovieName>{movie.title}</S.MovieName>
-              </S.Movie>
-            ))}
+            <Carousel>
+              {(genre.name === 'Action' ? actionMovies : genre.name === 'Adventure' ? adventureMovies : genre.name === 'Animation' ? animationMovies : genre.name === 'Comedy' ? comedyMovies : genre.name === 'Crime' ? crimeMovies : genre.name === 'Documentary' ? documentaryMovies : genre.name === 'Drama' ? dramaMovies : genre.name === 'Family' ? familyMovies : genre.name === 'Fantasy' ? fantasyMovies : genre.name === 'History' ? historyMovies : genre.name === 'Horror' ? horrorMovies : genre.name === 'Music' ? musicMovies : genre.name === 'Mystery' ? mysteryMovies : genre.name === 'Romance' ? romanceMovies : genre.name === 'Science Fiction' ? scienceFictionMovies : genre.name === 'TV Movie' ? tvMovies : genre.name === 'Thriller' ? thrillerMovies : genre.name === 'War' ? warMovies : genre.name === 'Western' ? westernMovies : [])?.map((movie) => (
+                <a href={`/movie/${movie.id}`} key={movie.id}>
+                  <S.Movie key={movie.id}>
+                    <S.MovieImage 
+                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      alt={movie.title}
+                    />
+                  </S.Movie>
+                  <S.MovieName>{movie.title}</S.MovieName>
+                </a>
+              ))}
+            </Carousel>
           </S.MovieContainer>
         </section>
       ))}
