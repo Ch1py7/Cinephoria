@@ -4,10 +4,9 @@
     "paths": {
 			"@assets": ["/assets/*", "/assets"],
 			"@components": ["/components/*", "/components"],
-      "@services": ["/services/*", "/services"],
-			"@pages": ["/pages/*", "/pages"],
 			"@types": ["/types/*", "/types"],
-      "@styles": ["/styles/*", "/styles"],
+      "@services": ["/services/*", "/services"],
+      "@hooks": ["/hooks/*", "/hooks"],
     },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
