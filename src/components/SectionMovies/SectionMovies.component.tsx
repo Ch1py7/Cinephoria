@@ -3,6 +3,7 @@ import * as S from './SectionMovies.styles'
 import { MovieTypes } from 'types/movie.types'
 import { MoviesSectionCarousel as Carousel } from '../MoviesSectionCarousel'
 import { MovieService } from 'services'
+import { Link } from 'react-router-dom' 
 
 export const SectionMovies: FC = (): ReactElement => {
   const [category, setCategory] = useState<string[]>([])
@@ -37,7 +38,7 @@ export const SectionMovies: FC = (): ReactElement => {
           <S.MovieContainer>
             <Carousel>
               {movies[index]?.map((movie) => (
-                <a href={`/movie/${movie.id}`} key={movie.id}>
+                <Link to={`/movie/${movie.id}`} key={movie.id}>
                   <S.Movie key={movie.id}>
                     <S.MovieImage 
                       src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
@@ -45,7 +46,7 @@ export const SectionMovies: FC = (): ReactElement => {
                     />
                   </S.Movie>
                   <S.MovieName>{movie.title}</S.MovieName>
-                </a>
+                </Link>
               ))}
             </Carousel>
           </S.MovieContainer>
