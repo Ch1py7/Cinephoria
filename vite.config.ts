@@ -12,7 +12,7 @@ export default defineConfig({
       components: path.resolve(__dirname, './src/components'),
       types: path.resolve(__dirname, './src/types'),
       services: path.resolve(__dirname, './src/services'),
-      context: path.resolve(__dirname, './src/secontextvices'),
+      hooks: path.resolve(__dirname, './src/hooks'),
     },
   },
   plugins: [react()],
