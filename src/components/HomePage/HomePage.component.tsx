@@ -1,4 +1,4 @@
-import { FC, ReactElement, useEffect, useState } from 'react'
+import { FC, ReactElement } from 'react'
 import { SectionMovies } from '../SectionMovies'
 import { NavComponent } from '../NavComponent'
 import { CarouselComponent } from '../CarouselComponent'
