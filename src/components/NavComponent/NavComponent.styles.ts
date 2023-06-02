@@ -4,10 +4,9 @@ export const NavComponent = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   height: 8rem;
   padding: 2rem 4rem;
@@ -15,11 +14,19 @@ export const NavComponent = styled.nav`
   font-family: 'Satoshi', sans-serif;
 `
 
-export const NavSections = styled.div`
+export const Burger = styled.div`
+  justify-self: start;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 17rem;
+  gap: 2rem;
+`
+
+export const NavSections = styled.div`
+  justify-self: end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1.8rem;
 `
 
@@ -31,6 +38,8 @@ export const NavAnchor = styled.a`
 `
 
 export const LogoImage = styled.img`
+  justify-self: center;
+  align-self: center;
   height: 2.4rem;
 `
 

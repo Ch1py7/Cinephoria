@@ -24,7 +24,6 @@ export const MoviePage: FC = (): ReactElement => {
   const movie = async() => {
     const movie = await MovieService.getMovie(id ?? '')
     setData(movie)
-    console.log(movie)
     if (movie.runtime) {
       setMovieDuration(await movieDurationConvertion(movie.runtime))
     }
