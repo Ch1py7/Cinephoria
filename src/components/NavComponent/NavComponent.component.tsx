@@ -12,7 +12,8 @@ export const NavComponent: FC = (): ReactElement => {
 
   const IconStyles = {
     fontSize: '2.4rem',
-    color: '#e4e0e6'
+    color: '#e4e0e6',
+    cursor: 'pointer'
   }
 
   return (
