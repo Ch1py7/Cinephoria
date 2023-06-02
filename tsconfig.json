@@ -8,6 +8,7 @@
       "@services": ["/services/*", "/services"],
       "@hooks": ["/hooks/*", "/hooks"],
       "@context": ["/context/*", "/context"],
+      "@styles": ["/styles/*", "/styles"],
     },
     "target": "ESNext",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
