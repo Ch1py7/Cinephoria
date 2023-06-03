@@ -10,7 +10,7 @@ export const BurgerOptions = styled.div`
   flex-direction: column;
   width: 36rem;
   height: 100%;
-  padding: 3rem 4rem;
+  padding: 3rem 6rem;
   gap: 2rem;
   background-color: #0f0f0f;
   @media (max-width: 370px) {
