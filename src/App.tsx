@@ -1,5 +1,6 @@
 import { HomePage } from './components/HomePage'
 import { MoviePage } from 'components/MoviePage'
+import { SearchPage } from 'components/SearchPage'
 import { FC, ReactElement } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
@@ -8,6 +9,7 @@ export const App: FC = (): ReactElement => {
     <Routes>
       <Route path='/' element={<HomePage />}/>
       <Route path='/movie/:id' element={<MoviePage />}/>
+      <Route path='/search' element={<SearchPage />}/>
     </Routes>
   )
 }
