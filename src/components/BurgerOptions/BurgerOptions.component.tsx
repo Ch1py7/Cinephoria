@@ -10,13 +10,14 @@ interface BurgerOptionsProps {
 export const BurgerOptions: FC<BurgerOptionsProps> = ({ isMenuOpen, onClickBurger}): ReactElement => {
   const IconStyles = {
     fontSize: '2.4rem',
-    color: '#e4e0e6'
+    color: '#e4e0e6',
+    cursor: 'pointer'
   }
   
   return (
     <>
       <S.BurgerOptions className={isMenuOpen ? 'showMenu' : 'noShowMenu'}>
-        <S.Blur isOpen={isMenuOpen ? 'block' : 'none'}/>
+        <S.Blur onClick={onClickBurger} isOpen={isMenuOpen ? 'block' : 'none'}/>
         <Icon onClick={onClickBurger} icon='radix-icons:cross-2' style={IconStyles} />
         <ol style={{display: 'flex', flexDirection: 'column', gap: '2rem'}}>
           <li>
@@ -24,6 +25,9 @@ export const BurgerOptions: FC<BurgerOptionsProps> = ({ isMenuOpen, onClickBurge
           </li>
           <li>
             <S.Link to='/movies'>Movies</S.Link>
+          </li>
+          <li>
+            <S.Link to='/search'>Search</S.Link>
           </li>
           <li>
             <S.Link to='/originals'>Originals</S.Link>

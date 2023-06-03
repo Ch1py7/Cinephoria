@@ -21,7 +21,7 @@ export const CarouselItem = styled.li`
   & > * {
     border-radius: 10px;
     height: 22.5;
-    width: 40rem;
+    width: 15.7rem;
   }
 `
 
@@ -35,7 +35,7 @@ export const CarouselList = styled.ul<CarouselListProps>`
   list-style: none;
   overflow: hidden;
   & > ${CarouselItem}:first-of-type {
-    margin-left: -${(props) => props.current * 44}rem;
+    margin-left: -${(props) => props.current * 19.7}rem;
   }
 `
 
@@ -53,7 +53,7 @@ export const CarouselButton = styled.button`
   justify-content: center;
   width: 6rem;
   height: 6rem;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   background-color: transparent;
   border: none;
   cursor: pointer;

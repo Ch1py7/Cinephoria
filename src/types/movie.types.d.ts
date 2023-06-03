@@ -12,13 +12,13 @@ export namespace MovieTypes {
     release_date: number
     media_type: string
     title: string
-    video: false
+    video: boolean
     vote_average: number
     vote_count: number
   }
 
   export interface MovieProps {
-    adult: false
+    adult: boolean
     backdrop_path: '/h8gHn0OzBoaefsYseUByqsmEDMY.jpg'
     belongs_to_collection: BelongsToCollection[]
     budget: number
@@ -73,6 +73,13 @@ export namespace MovieTypes {
   export interface Movies {
     page: number
     results: MoviesProps[]
+  }
+
+  export interface Movie {
+    page: number
+    results: MovieProps[]
+    total_pages: number
+    total_results: number
   }
 
   export interface GenresProps {

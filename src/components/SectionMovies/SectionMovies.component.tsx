@@ -5,6 +5,8 @@ import { MoviesSectionCarousel as Carousel } from '../MoviesSectionCarousel'
 import { MovieService } from 'services'
 import { Link } from 'react-router-dom' 
 
+// TODO: refactor this component to use the useMovies hook
+
 export const SectionMovies: FC = (): ReactElement => {
   const [category, setCategory] = useState<string[]>([])
   const [movies, setMovies] = useState<Array<MovieTypes.MoviesProps[]>>([])
@@ -41,7 +43,7 @@ export const SectionMovies: FC = (): ReactElement => {
                 <Link to={`/movie/${movie.id}`} key={movie.id}>
                   <S.Movie key={movie.id}>
                     <S.MovieImage 
-                      src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                      src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                       alt={movie.title}
                     />
                   </S.Movie>

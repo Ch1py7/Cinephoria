@@ -18,6 +18,9 @@ export const TrendingContainer = styled.div`
   @media (max-width: 920px) {
     padding: 0 4rem;
   }
+  @media (max-width: 370px) {
+    padding: 0 2rem;
+  }
 `
 
 export const MovieContainer = styled.div`
