@@ -5,7 +5,7 @@ import { MovieTypes } from 'types/movie.types'
 import { useMovies } from 'hooks/useMovies'
 
 export const SearchPage: FC = (): ReactElement => {
-  const [query, setQuery] = useState<string>()
+  const [query, setQuery] = useState<string>('')
 
   const { movies: moviesQuery } = useMovies<MovieTypes.Movie>(`search/movie?query=${query}`)
   const { movies: moviesTrending } = useMovies<MovieTypes.Movie>('trending/movie/day')
@@ -27,7 +27,7 @@ export const SearchPage: FC = (): ReactElement => {
       </form>
       <h3 style={{fontSize: '2rem', marginTop: '2rem', color: '#fff'}}>Explore Trending</h3>
       <S.MoviesContainer>
-        {moviesQuery?.results ?? moviesQuery?.results.length === 0 ?
+        {moviesQuery?.results.length === 0 ?
           (
             moviesTrending?.results?.map((movie) => (
               <S.MovieCard key={movie.id}>
