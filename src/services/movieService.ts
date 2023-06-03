@@ -20,10 +20,4 @@ export namespace MovieService {
     const response: MovieTypes.Genres = await res.json()
     return response
   }
-
-  export const getMovie = async (movieId: string) => {
-    const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options)
-    const response: MovieTypes.MovieProps = await res.json()
-    return response
-  }
 }
