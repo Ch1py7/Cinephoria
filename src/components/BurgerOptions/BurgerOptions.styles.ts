@@ -13,6 +13,9 @@ export const BurgerOptions = styled.div`
   padding: 3rem 4rem;
   gap: 2rem;
   background-color: #0f0f0f;
+  @media (max-width: 370px) {
+    padding: 3rem 2rem;
+  }
 `
 
 export const Blur = styled.div<BurgerOptionsProps>`

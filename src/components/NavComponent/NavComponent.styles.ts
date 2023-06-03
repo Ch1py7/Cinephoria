@@ -10,9 +10,12 @@ export const NavComponent = styled.nav`
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   height: 8rem;
-  padding: 2rem 4rem;
+  padding: 2rem 6rem;
   background-color: #101010dd;
   font-family: 'Satoshi', sans-serif;
+  @media (max-width: 370px) {
+    padding: 2rem 2rem;
+  }
 `
 
 export const Burger = styled.div`
