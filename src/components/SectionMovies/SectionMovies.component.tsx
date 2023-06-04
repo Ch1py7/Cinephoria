@@ -1,42 +1,30 @@
 import { FC, ReactElement, useEffect, useState } from 'react'
+import { Link } from 'react-router-dom' 
+import { MovieService } from 'services'
+import { useFetch } from 'hooks/useFetch'
 import * as S from './SectionMovies.styles'
 import { MovieTypes } from 'types/movie.types'
 import { MoviesSectionCarousel as Carousel } from '../MoviesSectionCarousel'
-import { MovieService } from 'services'
-import { Link } from 'react-router-dom' 
-
-// TODO: refactor this component to use the useMovies hook
 
 export const SectionMovies: FC = (): ReactElement => {
-  const [category, setCategory] = useState<string[]>([])
-  const [movies, setMovies] = useState<Array<MovieTypes.MoviesProps[]>>([])
+  const [movies, setMovies] = useState<MovieTypes.MoviesProps[][]>([])
+  const { movies: id } = useFetch<MovieTypes.Genres>('genre/movie/list')
 
-  const ids = async() => {
-    const Categories = await MovieService.getCategory()
-    const categoryName = Categories.genres.map((category) => category.name)
-    const id = Categories.genres.map((category) => category.id)
-    setCategory(categoryName)
-    if (id) {
-      const test = async() => {
-        const Movies = await Promise.all(
-          id.map(async(id) => await MovieService.getMovies(id))
-        )
-        const moviesCategory = Movies.map((res) => res.results)
-        setMovies(moviesCategory)
-      }
-      test()
-    }
+  const getMoviesByGenres = async () => {
+    const ids = id?.genres.map(genre => MovieService.getMovies(genre.id))
+    const moviesByGenres = await Promise.all(ids ?? [])
+    setMovies(moviesByGenres.map((movie) => movie.results))
   }
 
   useEffect(() => {
-    ids()
-  }, [])
+    getMoviesByGenres()
+  }, [id])
 
   return (
     <>
-      {category.map((genres, index) => (
-        <section key={genres} style={{padding: '0 4rem', height: '35rem'}}>
-          <S.SectionName>{genres}</S.SectionName>
+      {id?.genres.map((genre, index) => (
+        <section key={genre.id} style={{padding: '0 4rem', height: '35rem'}}>
+          <S.SectionName>{genre.name}</S.SectionName>
           <S.MovieContainer>
             <Carousel>
               {movies[index]?.map((movie) => (
