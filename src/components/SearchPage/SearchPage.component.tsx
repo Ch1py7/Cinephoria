@@ -2,13 +2,13 @@ import { FC, ReactElement, useState } from 'react'
 import * as S from './SearchPage.styles'
 import { NavComponent } from 'components/NavComponent'
 import { MovieTypes } from 'types/movie.types'
-import { useMovies } from 'hooks/useMovies'
+import { useFetch } from 'hooks/useFetch'
 
 export const SearchPage: FC = (): ReactElement => {
   const [query, setQuery] = useState<string>('')
 
-  const { movies: moviesQuery } = useMovies<MovieTypes.Movie>(`search/movie?query=${query}`)
-  const { movies: moviesTrending } = useMovies<MovieTypes.Movie>('trending/movie/day')
+  const { movies: moviesQuery } = useFetch<MovieTypes.Movie>(`search/movie?query=${query}`)
+  const { movies: moviesTrending } = useFetch<MovieTypes.Movie>('trending/movie/day')
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()

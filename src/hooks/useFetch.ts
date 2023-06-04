@@ -10,7 +10,7 @@ const options = {
 
 const createUrl = (url: string) => `https://api.themoviedb.org/3/${url}`
 
-export const useMovies = <T>(get: string) => {
+export const useFetch = <T>(get: string) => {
   const [movies, setMovies] = useState<T | undefined>()
 
   const getMovies = useCallback(async () => {

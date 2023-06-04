@@ -4,13 +4,13 @@ import * as S from './MoviePage.styles'
 import { useParams } from 'react-router-dom' 
 import { NavComponent } from 'components/NavComponent'
 import { MovieTypes } from 'types/movie.types'
-import { useMovies } from 'hooks/useMovies'
+import { useFetch } from 'hooks/useFetch'
 
 export const MoviePage: FC = (): ReactElement => {
   const [movieDuration, setMovieDuration] = useState<string>()
   const { id: movieId } = useParams()
 
-  const { movies } = useMovies<MovieTypes.MovieProps>(`movie/${movieId}`)
+  const { movies } = useFetch<MovieTypes.MovieProps>(`movie/${movieId}`)
 
   const movieDurationConvertion = (time: number) => {
     const hours = Math.floor(time / 60)
