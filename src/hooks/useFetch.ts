@@ -11,13 +11,13 @@ const options = {
 const createUrl = (url: string) => `https://api.themoviedb.org/3/${url}`
 
 export const useFetch = <T>(get: string) => {
-  const [movies, setMovies] = useState<T | undefined>()
+  const [data, setData] = useState<T | undefined>()
 
   const getMovies = useCallback(async () => {
     try {
       const res = await fetch(createUrl(get), options)
       const response: T = await res.json()
-      setMovies(response)
+      setData(response)
     }
     catch (error) {
       console.error(error)
@@ -28,5 +28,5 @@ export const useFetch = <T>(get: string) => {
     getMovies()
   }, [getMovies])
 
-  return { movies }
+  return { data }
 }

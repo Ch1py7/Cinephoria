@@ -7,8 +7,8 @@ import { useFetch } from 'hooks/useFetch'
 export const SearchPage: FC = (): ReactElement => {
   const [query, setQuery] = useState<string>('')
 
-  const { movies: moviesQuery } = useFetch<MovieTypes.Movie>(`search/movie?query=${query}`)
-  const { movies: moviesTrending } = useFetch<MovieTypes.Movie>('trending/movie/day')
+  const { data: moviesQuery } = useFetch<MovieTypes.Movie>(`search/movie?query=${query}`)
+  const { data: moviesTrending } = useFetch<MovieTypes.Movie>('trending/movie/day')
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
