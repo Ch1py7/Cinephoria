@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react'
 import * as S from './SeriesPage.styles'
-import { CarouselComponent } from 'components/CarouselComponent'
+import { MainCarousel } from 'components/MainCarousel'
 import { NavComponent } from 'components/NavComponent'
 
 export const SeriesPage: FC = (): ReactElement => {
@@ -15,7 +15,7 @@ export const SeriesPage: FC = (): ReactElement => {
     <S.SeriesPage>
       <NavComponent />
       <S.CarouselContainer>
-        <CarouselComponent pictures={pictures}/>
+        <MainCarousel pictures={pictures}/>
       </S.CarouselContainer>
     </S.SeriesPage>
   )

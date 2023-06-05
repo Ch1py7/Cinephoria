@@ -4,7 +4,7 @@ import { MovieService } from 'services'
 import { useFetch } from 'hooks/useFetch'
 import * as S from './MoviesSection.styles'
 import { MovieTypes } from 'types/movie.types'
-import { MoviesSectionCarousel as Carousel } from '../MoviesSectionCarousel'
+import { Carousel } from '../Carousel'
 
 export const MoviesSection: FC = (): ReactElement => {
   const [movies, setMovies] = useState<MovieTypes.MoviesProps[][]>([])

@@ -1,11 +1,11 @@
 import { FC, ReactElement } from 'react'
 import Carousel from 'devsgnr-carousel'
 
-interface CarouselComponentProps {
+interface MainCarouselProps {
   pictures: string[]
 }
 
-export const CarouselComponent: FC<CarouselComponentProps> = ({ pictures }): ReactElement => {
+export const MainCarousel: FC<MainCarouselProps> = ({ pictures }): ReactElement => {
   return (
     <Carousel
       borderRadius={10}
