@@ -1,16 +1,18 @@
 import { FC, ReactElement, useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import * as S from './MoviePage.styles'
-import { useParams } from 'react-router-dom' 
+import { useParams, Link } from 'react-router-dom' 
 import { NavComponent } from 'components/NavComponent'
 import { MovieTypes } from 'types/movie.types'
 import { useFetch } from 'hooks/useFetch'
+import { Carousel } from 'components/Carousel'
 
 export const MoviePage: FC = (): ReactElement => {
   const [movieDuration, setMovieDuration] = useState<string>()
   const { id: movieId } = useParams()
 
   const { data } = useFetch<MovieTypes.MovieProps>(`movie/${movieId}`)
+  const { data: recommendations } = useFetch<MovieTypes.Movie>(`movie/${movieId}/recommendations`)
 
   const movieDurationConvertion = (time: number) => {
     const hours = Math.floor(time / 60)
@@ -49,6 +51,21 @@ export const MoviePage: FC = (): ReactElement => {
               <S.GenreDecoration fontSize='1.8rem' style={{marginRight: '1rem'}} key={company.id}>{company.name}</S.GenreDecoration>
             )}
             </div>
+          </div>
+          <div>
+            <Carousel>
+              {(recommendations?.results ?? []).map((recommendation) => (
+                <Link to={`/movie/${recommendation.id}`} key={recommendation.id}>
+                  <S.Recommendation key={recommendation.id}>
+                    <S.RecommendationImage 
+                      src={`https://image.tmdb.org/t/p/w500${recommendation.poster_path}`}
+                      alt={recommendation.title}
+                    />
+                  </S.Recommendation>
+                  <S.RecommendationName>{recommendation.title}</S.RecommendationName>
+                </Link>
+              ))}
+            </Carousel>
           </div>
         </div>
       </S.MovieInformation>

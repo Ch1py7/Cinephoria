@@ -36,6 +36,7 @@ export const MovieTitle = styled.h1`
 
 export const MovieDescription = styled.p<MoviePageProps>`
   display: flex;
+  align-items: center;
   font-size: ${(props) => `${props.fontSize}`};
   color: #e1e1e1;
 `
@@ -48,4 +49,37 @@ export const MovieSubTitle = styled.h2<MoviePageProps>`
 export const GenreDecoration = styled.p<MoviePageProps>`
   color: #e1e1e1;
   font-size: ${(props) => `${props.fontSize}`};
+`
+
+export const Recommendation = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  height: calc(24rem - 7px);
+  border: 2px solid transparent;
+  border-radius: 4px;
+  transition: border 0.2s linear;
+  &:hover {
+    border: 2px solid #753eef;
+  }
+`
+
+export const RecommendationImage = styled.img`
+  height: 100%;
+  filter: opacity(0.6);
+  transition: filter 0.2s linear;
+  &:hover {
+    filter: opacity(1);
+  }
+`
+
+export const RecommendationName = styled.h3`
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 2.4rem;
+  color: #d5d5d5;
 `
