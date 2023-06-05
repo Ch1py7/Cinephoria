@@ -2,11 +2,11 @@ import { FC, ReactElement, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom' 
 import { MovieService } from 'services'
 import { useFetch } from 'hooks/useFetch'
-import * as S from './SectionMovies.styles'
+import * as S from './MoviesSection.styles'
 import { MovieTypes } from 'types/movie.types'
 import { MoviesSectionCarousel as Carousel } from '../MoviesSectionCarousel'
 
-export const SectionMovies: FC = (): ReactElement => {
+export const MoviesSection: FC = (): ReactElement => {
   const [movies, setMovies] = useState<MovieTypes.MoviesProps[][]>([])
   const { movies: id } = useFetch<MovieTypes.Genres>('genre/movie/list')
 

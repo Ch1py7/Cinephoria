@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react'
 import * as S from './BurgerOptions.styles'
-import { Icon } from '@iconify/react'
+import { Separator } from 'styles/Separator.styles'
 
 interface BurgerOptionsProps {
   isMenuOpen: boolean
@@ -8,37 +8,44 @@ interface BurgerOptionsProps {
 }
 
 export const BurgerOptions: FC<BurgerOptionsProps> = ({ isMenuOpen, onClickBurger}): ReactElement => {
-  const IconStyles = {
-    fontSize: '2.4rem',
-    color: '#e4e0e6',
-    cursor: 'pointer'
-  }
-  
   return (
     <>
       <S.BurgerOptions className={isMenuOpen ? 'showMenu' : 'noShowMenu'}>
         <S.Blur onClick={onClickBurger} isOpen={isMenuOpen ? 'block' : 'none'}/>
-        <Icon onClick={onClickBurger} icon='radix-icons:cross-2' style={IconStyles} />
+        <S.Icon onClick={onClickBurger} icon='radix-icons:cross-2' />
         <ol style={{display: 'flex', flexDirection: 'column', gap: '2rem'}}>
           <li>
-            <S.Link to='/'>Home</S.Link>
+            <S.Link onClick={onClickBurger} to='/'>Home</S.Link>
           </li>
           <li>
-            <S.Link to='/movies'>Movies</S.Link>
+            <S.Link onClick={onClickBurger} to='/series'>Series</S.Link>
           </li>
           <li>
-            <S.Link to='/search'>Search</S.Link>
+            <S.Link onClick={onClickBurger} to='/movies'>Movies</S.Link>
           </li>
           <li>
-            <S.Link to='/originals'>Originals</S.Link>
+            <S.Link onClick={onClickBurger} to='/search'>Search</S.Link>
           </li>
           <li>
-            <S.Link to='/trending'>Trending Now</S.Link>
+            <S.Link onClick={onClickBurger} to='/originals'>Originals</S.Link>
           </li>
           <li>
-            <S.Link to='/genres'>Genres</S.Link>
+            <S.Link onClick={onClickBurger} to='/trending'>Trending Now</S.Link>
           </li>
+          <Separator size='small'/>
+          <li>
+            <S.Link onClick={onClickBurger} to='/genres'>Genres</S.Link>
+          </li>
+          <Separator size='small'/>
         </ol>
+        <S.Socials>
+          <a href='https://twitter.com/Bulbsum' target='_BLANK' rel='noreferrer'>
+            <S.Icon icon='akar-icons:twitter-fill' style={{fontSize: '4rem'}}/>
+          </a>
+          <a href='https://github.com/Ch1py7' target='_BLANK' rel='noreferrer'>
+            <S.Icon icon='akar-icons:github-fill' style={{fontSize: '4rem'}}/>
+          </a>
+        </S.Socials>
       </S.BurgerOptions>
     </>
   )

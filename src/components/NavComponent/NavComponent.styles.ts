@@ -13,7 +13,7 @@ export const NavComponent = styled.nav`
   padding: 2rem 6rem;
   background-color: #101010dd;
   font-family: 'Satoshi', sans-serif;
-  @media (max-width: 370px) {
+  @media (max-width: 414px) {
     padding: 2rem 2rem;
   }
 `

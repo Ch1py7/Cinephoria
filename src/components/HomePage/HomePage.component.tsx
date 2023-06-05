@@ -1,5 +1,5 @@
 import { FC, ReactElement } from 'react'
-import { SectionMovies } from '../SectionMovies'
+import { MoviesSection } from 'components/MoviesSection'
 import { NavComponent } from '../NavComponent'
 import { CarouselComponent } from '../CarouselComponent'
 import * as S from './HomePage.styles'
@@ -12,7 +12,7 @@ export const HomePage: FC = (): ReactElement => {
       <S.TrendingContainer>
         <CarouselComponent />
       </S.TrendingContainer>
-      <SectionMovies />
+      <MoviesSection />
     </>
   )
 }
