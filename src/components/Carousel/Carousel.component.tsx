@@ -1,12 +1,12 @@
 import { FC, ReactElement, useMemo, useCallback, useState, Children } from 'react'
-import * as S from './MoviesSectionCarousel.styles'
+import * as S from './Carousel.styles'
 import { arrowLeft } from 'assets'
 
 export interface CarouselProps {
 	children: ReactElement | ReactElement[]
 }
 
-export const MoviesSectionCarousel: FC<CarouselProps> = ({ children }): ReactElement => {
+export const Carousel: FC<CarouselProps> = ({ children }): ReactElement => {
   const [current, setCurrent] = useState<number>(0)
   const childrenArray = useMemo(() => Children.toArray(children), [children])
 

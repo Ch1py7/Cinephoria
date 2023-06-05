@@ -6,9 +6,6 @@ export const SearchPage = styled.div`
   @media (max-width: 920px) {
     padding: 10rem 4rem;
   }
-  @media (max-width: 370px) {
-    padding: 10rem 2rem;
-  }
 `
 
 export const SearchInput = styled.input`

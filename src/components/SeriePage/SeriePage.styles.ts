@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-interface MoviePageProps {
+interface SeriePageProps {
   fontSize: string
 }
 
-export const MoviePage = styled.section`
+export const SeriePage = styled.section`
   min-height: 100vh;
   padding: 0 8rem;
   @media(max-width: 920px) {
@@ -12,7 +12,7 @@ export const MoviePage = styled.section`
   }
 `
 
-export const MovieInformation = styled.div`
+export const SerieInformation = styled.div`
   display: flex;
   gap: 2rem;
   padding-top: 12rem;
@@ -23,30 +23,30 @@ export const MovieInformation = styled.div`
   }
 `
 
-export const MovieImage = styled.img`
+export const SerieImage = styled.img`
   justify-self: center;
   max-width: 100%;
   border-radius: 1rem;
 `
 
-export const MovieTitle = styled.h1`
+export const SerieTitle = styled.h1`
   font-size: 3rem;
   color: #e1e1e1;
 `
 
-export const MovieDescription = styled.p<MoviePageProps>`
+export const SerieDescription = styled.p<SeriePageProps>`
   display: flex;
   align-items: center;
   font-size: ${(props) => `${props.fontSize}`};
   color: #e1e1e1;
 `
 
-export const MovieSubTitle = styled.h2<MoviePageProps>`
+export const SerieSubTitle = styled.h2<SeriePageProps>`
   font-size: ${(props) => `${props.fontSize}`};
   color: #e1e1e1;
 `
 
-export const GenreDecoration = styled.p<MoviePageProps>`
+export const GenreDecoration = styled.p<SeriePageProps>`
   color: #e1e1e1;
   font-size: ${(props) => `${props.fontSize}`};
 `

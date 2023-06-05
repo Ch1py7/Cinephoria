@@ -1,18 +1,25 @@
 import { FC, ReactElement } from 'react'
-import { SectionMovies } from '../SectionMovies'
+import { MoviesSection } from 'components/MoviesSection'
 import { NavComponent } from '../NavComponent'
-import { CarouselComponent } from '../CarouselComponent'
+import { MainCarousel } from '../MainCarousel'
 import * as S from './HomePage.styles'
 
-
 export const HomePage: FC = (): ReactElement => {
+  const pictures= [
+    '/halloween.webp',
+    '/la-extorsion.webp',
+    '/shazam.webp',
+    '/succession.webp',
+    '/supermariobros.webp',
+    '/fantasticbeasts.webp'
+  ]
   return (
     <>
       <NavComponent />
       <S.TrendingContainer>
-        <CarouselComponent />
+        <MainCarousel pictures={pictures}/>
       </S.TrendingContainer>
-      <SectionMovies />
+      <MoviesSection />
     </>
   )
 }

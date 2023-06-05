@@ -1,4 +1,3 @@
-import { MovieTypes } from 'types/movie.types'
 const options = {
   method: 'GET',
   headers: {
@@ -7,17 +6,10 @@ const options = {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace MovieService {
-  export const getMovies = async(genreId: number) => {
-    const res = await fetch(`https://api.themoviedb.org/3/discover/movie?with_genres=${genreId}`, options)
-    const response: MovieTypes.Movies = await res.json()
-    return response
-  }
-
-  export const getCategory = async () => {
-    const res = await fetch('https://api.themoviedb.org/3/genre/movie/list', options)
-    const response: MovieTypes.Genres = await res.json()
+export module MovieService {
+  export const getData = async<T>(endpoint: string, genreId: number) => {
+    const res = await fetch(`https://api.themoviedb.org/3/discover/${endpoint}${genreId}`, options)
+    const response: T = await res.json()
     return response
   }
 }
