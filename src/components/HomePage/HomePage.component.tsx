@@ -4,7 +4,6 @@ import { NavComponent } from '../NavComponent'
 import { MainCarousel } from '../MainCarousel'
 import * as S from './HomePage.styles'
 
-
 export const HomePage: FC = (): ReactElement => {
   const pictures= [
     '/halloween.webp',
@@ -14,7 +13,6 @@ export const HomePage: FC = (): ReactElement => {
     '/supermariobros.webp',
     '/fantasticbeasts.webp'
   ]
-  
   return (
     <>
       <NavComponent />

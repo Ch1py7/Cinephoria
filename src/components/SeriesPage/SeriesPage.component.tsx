@@ -12,6 +12,7 @@ export const SeriesPage: FC = (): ReactElement => {
     '/superman.webp',
     '/and-just-like-that.webp',
   ]
+  
   return (
     <S.SeriesPage>
       <NavComponent />
