@@ -32,7 +32,7 @@ export const NavComponent: FC = (): ReactElement => {
           style={IconStyles}
           onClick={onClickBurger}
         />
-        <S.NavLink to='/movies'>Movies</S.NavLink>
+        <S.NavLink to='/'>Movies</S.NavLink>
         <S.NavLink to='/series'>Series</S.NavLink>
       </S.Burger>
       <NavLink to='/' style={{display: 'grid'}}>
