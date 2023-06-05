@@ -33,6 +33,7 @@ export const NavComponent: FC = (): ReactElement => {
           onClick={onClickBurger}
         />
         <S.NavLink to='/movies'>Movies</S.NavLink>
+        <S.NavLink to='/series'>Series</S.NavLink>
       </S.Burger>
       <NavLink to='/' style={{display: 'grid'}}>
         <S.LogoImage src='/logo.png' draggable={false}/>

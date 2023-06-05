@@ -14,6 +14,7 @@ export const HomePage: FC = (): ReactElement => {
     '/supermariobros.webp',
     '/fantasticbeasts.webp'
   ]
+  
   return (
     <>
       <NavComponent />

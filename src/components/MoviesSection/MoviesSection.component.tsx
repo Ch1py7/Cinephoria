@@ -8,21 +8,21 @@ import { Carousel } from '../Carousel'
 
 export const MoviesSection: FC = (): ReactElement => {
   const [movies, setMovies] = useState<MovieTypes.MoviesProps[][]>([])
-  const { data: id } = useFetch<MovieTypes.Genres>('genre/movie/list')
+  const { data: moviesGenres } = useFetch<MovieTypes.Genres>('genre/movie/list')
 
   const getMoviesByGenres = async () => {
-    const ids = id?.genres.map(genre => MovieService.getMovies(genre.id))
+    const ids = moviesGenres?.genres.map(genre => MovieService.getData<MovieTypes.Movies>('movie?with_genres=',genre.id))
     const moviesByGenres = await Promise.all(ids ?? [])
     setMovies(moviesByGenres.map((movie) => movie.results))
   }
 
   useEffect(() => {
     getMoviesByGenres()
-  }, [id])
+  }, [moviesGenres])
 
   return (
     <>
-      {id?.genres.map((genre, index) => (
+      {moviesGenres?.genres.map((genre, index) => (
         <section key={genre.id} style={{padding: '0 4rem', height: '35rem'}}>
           <S.SectionName>{genre.name}</S.SectionName>
           <S.MovieContainer>

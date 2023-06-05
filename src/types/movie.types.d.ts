@@ -17,6 +17,22 @@ export namespace MovieTypes {
     vote_count: number
   }
 
+  export interface SeriesProps {
+    backdrop_path: string
+    first_air_date: string
+    genre_ids: number[]
+    id: number
+    name: string
+    origin_country: string[]
+    original_language: string
+    original_name: string
+    overview: string
+    popularity: number
+    poster_path: string
+    vote_average: number
+    vote_count: number
+  }
+
   export interface MovieProps {
     adult: boolean
     backdrop_path: '/h8gHn0OzBoaefsYseUByqsmEDMY.jpg'
@@ -78,6 +94,13 @@ export namespace MovieTypes {
   export interface Movie {
     page: number
     results: MovieProps[]
+    total_pages: number
+    total_results: number
+  }
+
+  export interface Series {
+    page: number
+    results: SeriesProps[]
     total_pages: number
     total_results: number
   }
