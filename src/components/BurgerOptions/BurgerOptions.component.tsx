@@ -27,9 +27,6 @@ export const BurgerOptions: FC<BurgerOptionsProps> = ({ isMenuOpen, onClickBurge
             <S.Link onClick={onClickBurger} to='/search'>Search</S.Link>
           </li>
           <li>
-            <S.Link onClick={onClickBurger} to='/originals'>Originals</S.Link>
-          </li>
-          <li>
             <S.Link onClick={onClickBurger} to='/trending'>Trending Now</S.Link>
           </li>
           <Separator size='small'/>

@@ -14,6 +14,7 @@ export const App: FC = (): ReactElement => {
       <Route path='/search' element={<SearchPage />}/>
       <Route path='/series' element={<SeriesPage />}/>
       <Route path='/serie/:id' element={<SeriePage />}/>
+      <Route path='/trending' element={<SearchPage />}/>
     </Routes>
   )
 }
