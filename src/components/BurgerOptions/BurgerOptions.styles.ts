@@ -61,5 +61,5 @@ export const Socials = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 `
