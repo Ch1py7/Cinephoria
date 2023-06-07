@@ -13,7 +13,7 @@ export const MoviesSection: FC = (): ReactElement => {
   const getMoviesByGenres = async () => {
     const ids = moviesGenres?.genres.map(genre => MovieService.getData<MovieTypes.Movies>('movie?with_genres=',genre.id))
     const moviesByGenres = await Promise.all(ids ?? [])
-    setMovies(moviesByGenres.map((movie) => movie.results))
+    setMovies(moviesByGenres.map((movie) => movie.results.filter((movie) => movie.backdrop_path !== null)))
   }
 
   useEffect(() => {

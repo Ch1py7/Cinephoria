@@ -17,8 +17,6 @@ export const MainCarousel: FC<MainCarouselProps> = ({ children }): ReactElement 
   const handlePrev = useCallback(() => {
     setCurrent((prev) => (prev === 0 ? childrenArray.length - 1 : prev - 1))
   }, [childrenArray])
-
-  useEffect(() => console.log(childrenArray),[])
   return (
     <S.Carousel>
       <S.CarouselButtonsContainer>

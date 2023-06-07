@@ -15,7 +15,7 @@ export const NavComponent = styled.nav`
   background-color: #101010dd;
   font-family: 'Satoshi', sans-serif;
   @media (max-width: 414px) {
-    padding: 2rem 2rem;
+    padding: 2rem;
   }
 `
 
@@ -34,6 +34,7 @@ export const NavSections = styled.div`
   align-items: center;
   gap: 1.8rem;
   @media (max-width: 920px) {
+    justify-self: end;
     gap: 1rem;
   }
 `

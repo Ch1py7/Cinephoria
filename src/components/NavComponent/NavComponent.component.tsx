@@ -35,7 +35,7 @@ export const NavComponent: FC = (): ReactElement => {
         <S.NavLink to='/'>Movies</S.NavLink>
         <S.NavLink to='/series'>Series</S.NavLink>
       </S.Burger>
-      <S.NavLink to='/'>
+      <S.NavLink style={{display: 'block'}} to='/'>
         <S.LogoImage src='/logo.png' draggable={false}/>
       </S.NavLink>
       <S.NavSections>

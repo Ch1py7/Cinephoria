@@ -7,8 +7,6 @@ import { Link } from 'react-router-dom'
 
 export const SearchPage: FC = (): ReactElement => {
   const [query, setQuery] = useState<string>('')
-  const [filterMovie, setFilterMovie] = useState<MovieTypes.MovieProps[]>([])
-  const [filterSerie, setFilterSerie] = useState<MovieTypes.SeriesProps[]>([])
 
   const { data: moviesQuery } = useFetch<MovieTypes.Movie>(`search/movie?query=${query}`)
   const { data: seriesQuery } = useFetch<MovieTypes.Series>(`search/tv?query=${query}`)
@@ -22,17 +20,6 @@ export const SearchPage: FC = (): ReactElement => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value)
   }
-
-  const dataFilter = () => {
-    const moviesFiltered = moviesQuery?.results.filter((movie) => movie.backdrop_path !==  null)
-    const seriesFiltered = seriesQuery?.results.filter((movie) => movie.backdrop_path !==  null)
-    setFilterMovie(moviesFiltered ?? [])
-    setFilterSerie(seriesFiltered ?? [])
-  }
-
-  useEffect (() => {
-    dataFilter()
-  }, [moviesQuery])
 
   return (
     <S.SearchPage>
@@ -71,26 +58,30 @@ export const SearchPage: FC = (): ReactElement => {
           :
           (
             <>
-              {filterMovie?.map((movie) => (
-                <Link to={`/movie/${movie.id}`} key={movie.id}>
-                  <S.MovieCard key={movie.id}>
-                    <S.MovieImage
-                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                      alt={movie.title}
-                    />
-                  </S.MovieCard>
-                </Link>
-              ))}
-              {filterSerie?.map((serie) => (
-                <Link to={`/serie/${serie.id}`} key={serie.id}>
-                  <S.MovieCard key={serie.id}>
-                    <S.MovieImage
-                      src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-                      alt={serie.name}
-                    />
-                  </S.MovieCard>
-                </Link>
-              ))}
+              {moviesQuery?.results
+                .filter((movie) => movie.backdrop_path !==  null)
+                .map((movie) => (
+                  <Link to={`/movie/${movie.id}`} key={movie.id}>
+                    <S.MovieCard key={movie.id}>
+                      <S.MovieImage
+                        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                        alt={movie.title}
+                      />
+                    </S.MovieCard>
+                  </Link>
+                ))}
+              {seriesQuery?.results
+                .filter((movie) => movie.backdrop_path !==  null)
+                .map((serie) => (
+                  <Link to={`/serie/${serie.id}`} key={serie.id}>
+                    <S.MovieCard key={serie.id}>
+                      <S.MovieImage
+                        src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
+                        alt={serie.name}
+                      />
+                    </S.MovieCard>
+                  </Link>
+                ))}
             </>
           )
         }

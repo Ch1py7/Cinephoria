@@ -30,7 +30,6 @@ export const CarouselList = styled.ul<CarouselListProps>`
   display: flex;
   align-items: flex-start;
   width: 100%;
-  padding-top: 1rem;
   gap: 5rem;
   list-style: none;
   overflow: hidden;
