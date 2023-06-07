@@ -12,12 +12,15 @@ export const SeriesPage: FC = (): ReactElement => {
     '/superman.webp',
     '/and-just-like-that.webp',
   ]
-  
   return (
     <S.SeriesPage>
       <NavComponent />
       <S.CarouselContainer>
-        <MainCarousel pictures={pictures}/>
+        <MainCarousel>
+          {pictures.map((pic, index) => (
+            <img key={index} src={pic} style={{width: 'calc(100vw - 8rem)', height: '100vh'}}/>
+          ))}
+        </MainCarousel>
       </S.CarouselContainer>
       <SeriesSection />
     </S.SeriesPage>

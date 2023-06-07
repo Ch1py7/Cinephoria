@@ -21,7 +21,7 @@ export const BurgerOptions: FC<BurgerOptionsProps> = ({ isMenuOpen, onClickBurge
             <S.Link onClick={onClickBurger} to='/series'>Series</S.Link>
           </li>
           <li>
-            <S.Link onClick={onClickBurger} to='/movies'>Movies</S.Link>
+            <S.Link onClick={onClickBurger} to='/'>Movies</S.Link>
           </li>
           <li>
             <S.Link onClick={onClickBurger} to='/search'>Search</S.Link>
@@ -29,11 +29,7 @@ export const BurgerOptions: FC<BurgerOptionsProps> = ({ isMenuOpen, onClickBurge
           <li>
             <S.Link onClick={onClickBurger} to='/trending'>Trending Now</S.Link>
           </li>
-          <Separator size='small'/>
-          <li>
-            <S.Link onClick={onClickBurger} to='/genres'>Genres</S.Link>
-          </li>
-          <Separator size='small'/>
+          <Separator style={{marginTop: '2rem'}} size='small'/>
         </ol>
         <S.Socials>
           <a href='https://twitter.com/Bulbsum' target='_BLANK' rel='noreferrer'>

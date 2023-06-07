@@ -11,13 +11,12 @@ export const Carousel: FC<CarouselProps> = ({ children }): ReactElement => {
   const childrenArray = useMemo(() => Children.toArray(children), [children])
 
   const handleNext = useCallback(() => {
-    setCurrent((prev) => (prev === childrenArray.length - 1 ? 0 : prev + 1))
+    setCurrent((prev) => (prev === childrenArray.length - 8 ? 0 : prev + 1))
   }, [childrenArray])
 
   const handlePrev = useCallback(() => {
-    setCurrent((prev) => (prev === 0 ? childrenArray.length - 1 : prev - 1))
+    setCurrent((prev) => (prev === 0 ? childrenArray.length - 8 : prev - 1))
   }, [childrenArray])
-
   return (
     <S.Carousel>
       <S.CarouselButtonsContainer>

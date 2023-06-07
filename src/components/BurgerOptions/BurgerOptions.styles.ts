@@ -10,7 +10,7 @@ interface BurgerOptionsProps {
 export const BurgerOptions = styled.div`
   display: flex;
   flex-direction: column;
-  width: 36rem;
+  width: 30rem;
   height: 100%;
   padding: 3rem 6rem;
   gap: 2rem;
@@ -26,10 +26,10 @@ export const Blur = styled.div<BurgerOptionsProps>`
   display: ${(props) => `${props.isOpen}`};
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 200vw;
   height: 100%;
   background-color: #16161650;
-  transform: translateX(36rem);
+  transform: translateX(30rem);
   backdrop-filter: blur(1px);
   @media (max-width: 414px) {
     display: none;
@@ -61,5 +61,5 @@ export const Socials = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
 `

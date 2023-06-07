@@ -24,7 +24,6 @@ export const SeriePage: FC = (): ReactElement => {
 
   useEffect(() => {
     movieDurationConvertion(data?.number_of_seasons ?? 0)
-    console.log(data)
   }, [data?.number_of_seasons])
 
   return (

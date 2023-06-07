@@ -8,13 +8,14 @@ export const NavComponent = styled.nav`
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  place-items: center;
   width: 100%;
   height: 8rem;
   padding: 2rem 6rem;
   background-color: #101010dd;
   font-family: 'Satoshi', sans-serif;
   @media (max-width: 414px) {
-    padding: 2rem 2rem;
+    padding: 2rem;
   }
 `
 
@@ -33,11 +34,13 @@ export const NavSections = styled.div`
   align-items: center;
   gap: 1.8rem;
   @media (max-width: 920px) {
+    justify-self: end;
     gap: 1rem;
   }
 `
 
 export const NavLink = styled(SourceLink)`
+  width: fit-content;
   font-size: 1.6rem;
   font-weight: 700;
   color: #fff;

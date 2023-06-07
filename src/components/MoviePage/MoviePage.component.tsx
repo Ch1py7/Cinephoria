@@ -8,11 +8,11 @@ import { useFetch } from 'hooks/useFetch'
 import { Carousel } from 'components/Carousel'
 
 export const MoviePage: FC = (): ReactElement => {
-  const [movieDuration, setMovieDuration] = useState<string>()
+  const [movieDuration, setMovieDuration] = useState<string>('')
   const { id: movieId } = useParams()
 
   const { data } = useFetch<MovieTypes.MovieProps>(`movie/${movieId}`)
-  const { data: recommendations } = useFetch<MovieTypes.Movie>(`movie/${movieId}/recommendations`)
+  const { data: recommendationsData } = useFetch<MovieTypes.Movie>(`movie/${movieId}/recommendations`)
 
   const movieDurationConvertion = (time: number) => {
     const hours = Math.floor(time / 60)
@@ -54,17 +54,19 @@ export const MoviePage: FC = (): ReactElement => {
           </div>
           <div>
             <Carousel>
-              {(recommendations?.results ?? []).map((recommendation) => (
-                <Link to={`/movie/${recommendation.id}`} key={recommendation.id}>
-                  <S.Recommendation key={recommendation.id}>
-                    <S.RecommendationImage 
-                      src={`https://image.tmdb.org/t/p/w500${recommendation.poster_path}`}
-                      alt={recommendation.title}
-                    />
-                  </S.Recommendation>
-                  <S.RecommendationName>{recommendation.title}</S.RecommendationName>
-                </Link>
-              ))}
+              {(recommendationsData?.results ?? [])
+                .filter((movie) => movie.backdrop_path !== null)
+                .map((recommendation) => (
+                  <Link to={`/movie/${recommendation.id}`} key={recommendation.id}>
+                    <S.Recommendation key={recommendation.id}>
+                      <S.RecommendationImage 
+                        src={`https://image.tmdb.org/t/p/w500${recommendation.poster_path}`}
+                        alt={recommendation.title}
+                      />
+                    </S.Recommendation>
+                    <S.RecommendationName>{recommendation.title}</S.RecommendationName>
+                  </Link>
+                ))}
             </Carousel>
           </div>
         </div>
