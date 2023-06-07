@@ -1,4 +1,4 @@
-import { FC, ReactElement, useCallback, useMemo, useState, Children, useEffect } from 'react'
+import { FC, ReactElement, useCallback, useMemo, useState, Children } from 'react'
 import { arrowLeft } from 'assets'
 import * as S from './MainCarousel.styles'
 

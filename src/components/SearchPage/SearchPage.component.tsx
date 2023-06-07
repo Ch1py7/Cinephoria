@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState, useEffect } from 'react'
+import { FC, ReactElement, useState } from 'react'
 import * as S from './SearchPage.styles'
 import { NavComponent } from 'components/NavComponent'
 import { MovieTypes } from 'types/movie.types'
