@@ -1,9 +1,9 @@
-import { FC, ReactElement, useState } from 'react'
-import * as S from './NavComponent.styles'
 import { Icon } from '@iconify/react'
 import { BurgerOptions } from 'components/BurgerOptions'
-import { NavLink } from 'react-router-dom'
 import { ProfileOptions } from 'components/ProfileOptions'
+import { FC, ReactElement, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import * as S from './NavComponent.styles'
 
 export const NavComponent: FC = (): ReactElement => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
@@ -20,12 +20,12 @@ export const NavComponent: FC = (): ReactElement => {
   const IconStyles = {
     fontSize: '2.4rem',
     color: '#e4e0e6',
-    cursor: 'pointer'
+    cursor: 'pointer',
   }
 
   return (
     <S.NavComponent>
-      <BurgerOptions isMenuOpen={isMenuOpen} onClickBurger={onClickBurger}/>
+      <BurgerOptions isMenuOpen={isMenuOpen} onClickBurger={onClickBurger} />
       <S.Burger>
         <Icon
           icon='iconamoon:menu-burger-horizontal'
@@ -35,11 +35,20 @@ export const NavComponent: FC = (): ReactElement => {
         <S.NavLink to='/'>Movies</S.NavLink>
         <S.NavLink to='/series'>Series</S.NavLink>
       </S.Burger>
-      <S.NavLink style={{display: 'block'}} to='/'>
-        <S.LogoImage src='/logo.png' draggable={false}/>
+      <S.NavLink style={{ display: 'block' }} to='/'>
+        <S.LogoImage
+          src='/logo.png'
+          aria-label='Go to home page'
+          draggable={false}
+          alt='logo'
+        />
       </S.NavLink>
       <S.NavSections>
-        <NavLink to='/search' style={{display: 'block'}}>
+        <NavLink
+          to='/search'
+          aria-label='Go to search page'
+          style={{ display: 'block' }}
+        >
           <Icon icon='ph:magnifying-glass-bold' style={IconStyles} />
         </NavLink>
         <S.ProfileOptions onClick={onClickProfile}>

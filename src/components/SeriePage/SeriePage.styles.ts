@@ -7,7 +7,7 @@ interface SeriePageProps {
 export const SeriePage = styled.section`
   min-height: 100vh;
   padding: 0 8rem;
-  @media(max-width: 920px) {
+  @media (max-width: 920px) {
     padding: 0 2rem;
   }
 `
@@ -16,7 +16,7 @@ export const SerieInformation = styled.div`
   display: flex;
   gap: 2rem;
   padding-top: 12rem;
-  @media(max-width: 920px) {
+  @media (max-width: 920px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;

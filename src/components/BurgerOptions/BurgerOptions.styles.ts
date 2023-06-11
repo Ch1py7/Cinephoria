@@ -1,7 +1,6 @@
-import styled from 'styled-components'
-import { NavLink as sourceLink } from 'react-router-dom'
 import { Icon as sourceIcon } from '@iconify/react'
-
+import { NavLink as sourceLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 interface BurgerOptionsProps {
   isOpen: string

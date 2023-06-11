@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export interface CarouselListProps {
-	items: number
-	current: number
+  items: number
+  current: number
 }
 
 export const Carousel = styled.section`

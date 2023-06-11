@@ -1,8 +1,8 @@
-import { FC, ReactElement } from 'react'
-import * as S from './SeriesPage.styles'
 import { MainCarousel } from 'components/MainCarousel'
 import { NavComponent } from 'components/NavComponent'
 import { SeriesSection } from 'components/SeriesSection'
+import { FC, ReactElement } from 'react'
+import * as S from './SeriesPage.styles'
 
 export const SeriesPage: FC = (): ReactElement => {
   const pictures = [
@@ -18,7 +18,11 @@ export const SeriesPage: FC = (): ReactElement => {
       <S.CarouselContainer>
         <MainCarousel>
           {pictures.map((pic, index) => (
-            <img key={index} src={pic} style={{width: 'calc(100vw - 8rem)', height: '100vh'}}/>
+            <img
+              key={index}
+              src={pic}
+              style={{ width: 'calc(100vw - 8rem)', height: '100vh' }}
+            />
           ))}
         </MainCarousel>
       </S.CarouselContainer>

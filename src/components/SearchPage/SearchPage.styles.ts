@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { Icon } from '@iconify/react'
+import styled from 'styled-components'
 
 export const SearchPage = styled.div`
   padding: 10rem 6rem;

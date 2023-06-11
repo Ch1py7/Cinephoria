@@ -1,14 +1,18 @@
 import { FC, ReactElement } from 'react'
-import * as S from './ProfileOptions.styles'
 import { Separator } from 'styles/Separator.styles'
+import * as S from './ProfileOptions.styles'
 
 interface ProfileOptionsProps {
   isProfileOpen: boolean
 }
 
-export const ProfileOptions: FC<ProfileOptionsProps> = ({ isProfileOpen }): ReactElement => {
+export const ProfileOptions: FC<ProfileOptionsProps> = ({
+  isProfileOpen,
+}): ReactElement => {
   return (
-    <S.ProfileOptions className={isProfileOpen ? 'showProfile' : 'noShowProfile'}>
+    <S.ProfileOptions
+      className={isProfileOpen ? 'showProfile' : 'noShowProfile'}
+    >
       <S.PofileList>
         <li>
           <S.Link to='/profile'>My Stuff</S.Link>

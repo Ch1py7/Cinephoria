@@ -1,11 +1,11 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: import.meta.env.VITE_API_KEY
-  }
+    Authorization: import.meta.env.VITE_API_KEY,
+  },
 }
 
 const createUrl = (url: string) => `https://api.themoviedb.org/3/${url}`
@@ -18,8 +18,7 @@ export const useFetch = <T>(get: string) => {
       const res = await fetch(createUrl(get), options)
       const response: T = await res.json()
       setData(response)
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error)
     }
   }, [get])

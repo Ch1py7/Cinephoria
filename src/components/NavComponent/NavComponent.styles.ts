@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { NavLink as SourceLink } from 'react-router-dom'
+import styled from 'styled-components'
 
 export const NavComponent = styled.nav`
   position: fixed;
@@ -70,7 +70,7 @@ export const LogoImage = styled.img`
 export const ProfileName = styled.p`
   font-size: 1.6rem;
   color: #fff;
-  @media(max-width: 920px) {
+  @media (max-width: 920px) {
     display: none;
   }
 `
